@@ -8,7 +8,7 @@ class Modal extends Component {
     return (
       <div>
         <Backdrop show={show} onHide={onHide} />
-        <div className={show ? 'show modal' : 'modal hide '}>
+        <div className={show ? 'modal' : 'modal hide'}>
           {this.props.children}
         </div>
       </div>

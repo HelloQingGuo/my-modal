@@ -20,12 +20,12 @@ class App extends Component {
   render() {
     const { isModalHidden } = this.state;
     return (
-      <div className="App">
+      <div>
         <button onClick={this.handleCloseOnClick}>
           {isModalHidden ? 'show' : 'close'}
         </button>
         <Modal show={isModalHidden} onHide={this.handleCloseOnHide}>
-          modal box body
+          modal body
         </Modal>
       </div>
     );
