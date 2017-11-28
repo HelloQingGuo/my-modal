@@ -10,20 +10,23 @@ class App extends Component {
     };
   }
   handleCloseOnClick = () => {
-    console.log('ths', this);
     this.setState({ isModalHidden: !this.state.isModalHidden });
   };
+
+  handleCloseOnHide = () => {
+    this.setState({ isModalHidden: false });
+  };
+
   render() {
     const { isModalHidden } = this.state;
     return (
       <div className="App">
-        <button
-          onClick={this.handleCloseOnClick}
-          style={{ position: 'relative', zIndex: 9999 }}
-        >
+        <button onClick={this.handleCloseOnClick}>
           {isModalHidden ? 'show' : 'close'}
         </button>
-        <Modal show={isModalHidden}>modal box body</Modal>
+        <Modal show={isModalHidden} onHide={this.handleCloseOnHide}>
+          modal box body
+        </Modal>
       </div>
     );
   }

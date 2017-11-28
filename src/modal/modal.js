@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import Backdrop from './backdrop';
 import './modal.css';
 
 class Modal extends Component {
-
   render() {
-    const { show } = this.props;
+    const { show, onHide } = this.props;
     return (
-      <div className='modal-wrapper'>
-        <div  className={show ? 'show modal' : 'modal hide '}>
+      <div>
+        <Backdrop show={show} onHide={onHide} />
+        <div className={show ? 'show modal' : 'modal hide '}>
           {this.props.children}
         </div>
       </div>
